@@ -99,7 +99,6 @@ int main(){
     CSUEB.emplace_back("Art and Education", 3000.0, 3000.0, 3000.0, 3000.0);
     CSUEB.emplace_back("CORE", 4000.0, 4000.0, 4000.0, 4000.0);
     Building dest = CSUEB[0]; //destination
-    cout << "Welcome to the Get to class on time program!";
     /* PROMPTS */
     while (choice != -1){//sentinel
         insertionSortStrings(CSUEB);//IMPORTANT: sort the vector every time the menu pops up to make Bsearch work
