@@ -26,6 +26,14 @@ void printHrsMin(double totTime, char mer){ //print total number of minutes as h
     int totHours = totTime / 60; //get total amount of hours
     if (mer == 'p')
         totHours -= 12; //reduce by 12 for pm
+    if (mer == 'p') //ADDITION: RESET HOURS
+        totHours -= 12; //reduce by 12 for pm
+    if ((mer == 'p' || mer == 'a') && totHours > 12){
+        totHours = 0 + (int)totHours % 12;
+    }
+    if (mer == 'm' && totHours > 23){
+        totHours = 0 + (int)totHours % 24;
+    }//END OF ADDITIONS
     int remMinutes = (int)totTime % 60;//get remaining minutes
     if (totHours < 10){//check if hours are less than 10
         if(remMinutes >= 10)//check if minutes are greater or equal to 10
@@ -191,6 +199,12 @@ int main(){
             cout << "Current style of time: " << mer;//indicate
             cout << "\n(a) for AM.\n(p) for PM\n(m) for military time (24 hour time)\n";
             cin >> mer;//set
+            while(mer != 'a' || mer != 'p' || mer != 'm'){//ADDITION: INPUT VALIDATION
+                cout << "Invalid input. Try again: ";
+                cin >> mer;
+                if (mer == 'a' || mer == 'p' || mer == 'm')
+                    break;
+            }//END OF ADDITION
             cin.ignore();//ignore
             cout << "Done.\n";//notice
         }
