@@ -24,8 +24,6 @@ double totalTime(int hours, int minutes, char meridian){//get total time from ho
         }
 void printHrsMin(double totTime, char mer){ //print total number of minutes as hh:mm
     int totHours = totTime / 60; //get total amount of hours
-    if (mer == 'p')
-        totHours -= 12; //reduce by 12 for pm
     if (mer == 'p') //ADDITION: RESET HOURS
         totHours -= 12; //reduce by 12 for pm
     if ((mer == 'p' || mer == 'a') && totHours > 12){
