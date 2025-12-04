@@ -102,10 +102,11 @@ int main(){
     char mer='m', loc='n', sen='\0';//am or pm or military (default military) and entrance of arrival (default north), sentinel (option 4)
     string target="South Science";//to search through the vector
     vector<Building> CSUEB;//vector
-    CSUEB.emplace_back("South Science", 1000.0, 1000.0, 1000.0, 1000.0);//example on how to add a building to the vector (name, north, east, west, south)
-    CSUEB.emplace_back("North Science", 2000.0, 2000.0, 2000.0, 2000.0);
-    CSUEB.emplace_back("Art and Education", 3000.0, 3000.0, 3000.0, 3000.0);
-    CSUEB.emplace_back("CORE", 4000.0, 4000.0, 4000.0, 4000.0);
+    CSUEB.emplace_back("South Science", 2199.7, 816.19, 1182.76, 439.38);//example on how to add a building to the vector (name, north, east, west, south)
+    CSUEB.emplace_back("North Science", 2047.53, 768.29, 1146.16, 502.5);
+    CSUEB.emplace_back("Art and Education", 1389.0, 1150.98, 1006.79, 1218.96);
+    CSUEB.emplace_back("CORE", 2026.3, 1157.48, 880.41, 782.85);
+    CSUEB.emplace_back("Meiklejohn Hall", 2538.0, 1659.16, 1128.49, 1069.16);
     Building dest = CSUEB[0]; //destination
     /* PROMPTS */
     while (choice != -1){//sentinel
@@ -214,25 +215,25 @@ int main(){
                 totTime = time + timefromD(dest.getNorth(), speed);//add to total time (dest from option 8)
                 cout << "You will arrive at " << dest.getName() << " at ";//output results
                 printHrsMin(totTime, mer);//output in XX:XX
-                cout << "This is from the North Entrance.\n";
+                cout << "This is from the North Side of Campus.\n";
                 break;
             case 'e'://east case
                 totTime = time + timefromD(dest.getEast(), speed);
                 cout << "You will arrive at " << dest.getName() << " at ";
                 printHrsMin(totTime, mer);
-                cout << "This is from the East Entrance.\n";
+                cout << "This is from the East Side of Campus.\n";
                 break;
             case 'w'://west case
                 totTime = time + timefromD(dest.getWest(), speed);
                 cout << "You will arrive at " << dest.getName() << " at ";
                 printHrsMin(totTime, mer);
-                cout << "This is from the West Entrance.\n";
+                cout << "This is from the West Side of Campus.\n";
                 break;
             case 's'://south case
                 totTime = time + timefromD(dest.getSouth(), speed);
                 cout << "You will arrive at " << dest.getName() << " at ";
                 printHrsMin(totTime, mer);
-                cout << "This is from the South Entrance.\n";
+                cout << "This is from the South Side of Campus.\n";
                 break;
             default://should not be activated
                 cout << "A terrible thing has happened";
